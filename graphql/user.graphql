@@ -10,7 +10,11 @@ type Mutation{
     password:String! @rules(apply:["min:8"])
   ): User! @create
 
-  updateUser(id: ID!, email:String!, name:String!):User! @update
+  updateUser(
+    id: ID!, 
+    email:String!, 
+    name:String!
+    ):User! @update
 
   deleteUser(id:ID!):User @delete
 
@@ -24,4 +28,5 @@ type User {
   email_verified_at: String
   email: String!
   posts: [Post]! @hasMany
+  password: String
 }
