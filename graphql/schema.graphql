@@ -4,6 +4,7 @@ type Query{
   user(id: ID @eq): User @find
 
   posts: [Post!]! @paginate
+  post(id: ID @eq): Post @find
 }
 
 type Mutation{
@@ -22,6 +23,7 @@ type User {
   name: String
   email_verified_at: String
   email: String!
+  posts: [Post]! @hasMany
 }
 
 type Post {
